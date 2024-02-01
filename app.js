@@ -105,9 +105,50 @@ for (const obj of cedar) {
  * Exercise - 3
  */
 
-const keys = cedar.keys();
+  const keys = Object.keys(cedar);
+ cedar.forEach( function (keys) {
+    if(keys.post === 'Sales manager'){
+      keys.salary += 2000;
+    }
+ } );
 
-for (const x of keys) {
-  
-}
+ console.log(cedar);
+
+
+ /**
+  * Exercise - 4
+  */
+
+ 
+    let maxValue = -Infinity;
+ 
+    const keys1 = Object.keys(cedar);
+ cedar.forEach( function (keys1) {
+    if(keys1.experience < maxValue){
+      console.log(`Experience:${keys.experience}`);
+      
+    }
+ } );
+
+
+ /**
+  * exercise -5
+  */
+
+ cedar.push(
+  {
+    Fname:'Sanjeev',
+    Lname:'Kapoor',
+    salary:30000,
+    location:'kalyan',
+    post:'Accountant',
+    experience:'5 years',
+    age:31
+  }
+ )
+
+ console.log(cedar);
+
+ 
+
  
