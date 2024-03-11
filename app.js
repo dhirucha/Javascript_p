@@ -150,5 +150,6 @@ for (const obj of cedar) {
  console.log(cedar);
 
  
+ cedar.sort()
 
  
