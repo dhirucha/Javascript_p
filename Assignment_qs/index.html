@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            height: 100vh;
+        }
+        .container{
+            display: flex;
+            align-items:center;
+            flex-direction: column;
+        }
+
+        #textspace{
+            font-size: 20px;
+            resize: none;
+        }
+
+    
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="textarea">
+            <textarea id="textspace" cols="30" rows="10" placeholder = 'Enter text...
+            '></textarea>
+        </div>
+        <div class="buttons">
+            <button class="red" onclick="redBtnEvent">Red</button>
+            <button class="blue" onclick="blueBtnEvent">Blue</button>
+            <button class="green" onclick="greenBtnEvent">Green</button>
+
+        </div>
+    </div>
+
+    <script>
+
+       const textspace = document.getElementById('textspace')
+
+        const redBtn = document.querySelector('.red')
+        const blueBtn = document.querySelector('.blue')
+        const greenBtn = document.querySelector('.green')
+
+        const redBtnEvent = redBtn.addEventListener('click',() =>{
+           textspace.style.color = 'red' 
+        })
+
+
+        const blueBtnEvent = blueBtn.addEventListener('click',() =>{
+           textspace.style.color = 'blue' 
+        })
+
+        const greenBtnEvent = greenBtn.addEventListener('click',() =>{
+           textspace.style.color = 'green' 
+        })
+    </script>
+</body>
+</html>

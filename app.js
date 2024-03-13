@@ -147,9 +147,8 @@ for (const obj of cedar) {
   }
  )
 
- console.log(cedar);
-
  
- cedar.sort()
+ let min_sal = cedar.sort(e => e.salary > 10000)
 
+console.log(min_sal)
  
