@@ -4,7 +4,7 @@ let cedar = [
     salary: 70000,
     location:'Thane',
     post: 'Software developer',
-    experience: '3 years',
+    experience: 3,
     age:35
     },
     {Fname: 'Ivana',
@@ -12,7 +12,7 @@ let cedar = [
     salary: 90000,
     location:'kalyan',
     post: 'Sales manager',
-    experience: '3 years',
+    experience: 3,
     age:22
     },
     {Fname: 'Mona',
@@ -20,7 +20,7 @@ let cedar = [
     salary: 80000,
     location:'Titwala',
     post: 'web developer',
-    experience: '4 years',
+    experience: 4,
     age:40
     },
     {Fname: 'Anita',
@@ -28,7 +28,7 @@ let cedar = [
     salary: 100000,
     location:'mulund',
     post: 'Marketing intern',
-    experience: '4 months',
+    experience: 4,
     age:19
     },
     {Fname: 'Eileen',
@@ -36,7 +36,7 @@ let cedar = [
     salary: 8000,
     location:'Thane',
     post: 'Creative head',
-    experience: '10 years',
+    experience: 10,
     age:42
     },
     {Fname: 'Ann',
@@ -44,7 +44,7 @@ let cedar = [
     salary: 14000,
     location:'kurla',
     post: 'Graphic designer',
-    experience: '3 years',
+    experience: 3,
     age:23
     },
     {Fname: 'Chris P',
@@ -52,7 +52,7 @@ let cedar = [
     salary: 10000,
     location:'dombivli',
     post: 'Software developer',
-    experience: '2 years',
+    experience: 2,
     age:34
     },
     {Fname: 'Justin',
@@ -60,15 +60,15 @@ let cedar = [
     salary: 26000,
     location:'vashi',
     post: 'Social media manager',
-    experience: '3 years',
+    experience: 3,
     age:34
     },
-    {Fname: 'Al B',
-    Lname: 'Zider',
+    {Fname: 'Madhav',
+    Lname: 'rete',
     salary: 30000,
     location:'Thane',
     post: 'Content creator',
-    experience: '4 years',
+    experience: 4,
     age:24
     },
     {Fname: 'Noah',
@@ -76,7 +76,7 @@ let cedar = [
     salary: 44000,
     location:'kalyan',
     post: 'Content writer',
-    experience: '4 years',
+    experience: 4,
     age:34
     }
 ];
@@ -95,11 +95,11 @@ for (const obj of cedar) {
  * Exercise - 2
  */
 
-for (const obj of cedar) {
-  if(obj.salary > 25000){
-    console.log(obj);
-  }
-};
+console.log('Employees with more than 25000:');
+ let minSalary = cedar.filter((e) => e.salary > 25000)
+
+console.log(minSalary)
+ 
 
 /**
  * Exercise - 3
@@ -112,23 +112,17 @@ for (const obj of cedar) {
     }
  } );
 
- console.log(cedar);
+ 
 
 
  /**
   * Exercise - 4
   */
+console.log('Employees with most experience');
 
- 
-    let maxValue = -Infinity;
- 
-    const keys1 = Object.keys(cedar);
- cedar.forEach( function (keys1) {
-    if(keys1.experience < maxValue){
-      console.log(`Experience:${keys.experience}`);
-      
-    }
- } );
+ let mostExperience = cedar.filter(e => e.experience > 3).sort();
+console.log(mostExperience);
+    
 
 
  /**
@@ -147,8 +141,49 @@ for (const obj of cedar) {
   }
  )
 
+ /**
+  * Exercise - 6
+  */
+  console.log('Employees more than 35 age:')
+  let senior = cedar.filter((e) => e.age > 35)
+  console.log(senior)
  
- let min_sal = cedar.sort(e => e.salary > 10000)
+/**
+ * Exercise - 7
+ */
 
-console.log(min_sal)
- 
+let nameSort = cedar.map((e) => e.Lname)
+console.log('Employees in alphabatical order:');
+console.log(nameSort.sort())
+
+/**
+ * Exercise 8
+ */
+
+let salarySort = cedar.map((e) => e.salary)
+console.log('Employees salary in descending order:')
+console.log(salarySort.sort((a,b) => a-b).reverse());
+
+
+/**
+ * Exercise -9
+ */
+
+  let totalSal = cedar.map(e => e.salary).reduce((res,curr) =>{return res = res+curr})
+  console.log('Total salary paid to employees:');
+  console.log(totalSal);
+
+/**
+ * Exercise - 10
+ */
+
+  console.log('Employees deleted named Madhav rete:')
+
+for (let i = 0; i < cedar.length; i++) {
+  if (cedar[i].Lname === 'rete') {
+      cedar.splice(i, 1); // Remove the element at index i
+      i--; // Adjust the loop counter since the array length has changed
+  }
+}
+
+console.log(cedar);
