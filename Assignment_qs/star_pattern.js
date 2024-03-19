@@ -64,7 +64,7 @@ function printInvertedPyramid(rows) {
         let row = '';
         // Inner loop for printing stars
         for (let j = 1; j <= i; j++) {
-            row += '* ';
+            row += '2 ';
         }
         console.log(row);
     }
